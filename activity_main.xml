@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header with Profile Icon -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/welcomeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello Lakshita 👋"
+                        android:textColor="@color/text_main"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome to Smart Library"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profileCard"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="22.5dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:id="@+id/profileIcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="@color/primary" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <!-- 🔥 Vibrant & Aesthetic Quote of the Day -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/quote_gradient_bg"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✨ Magic Word"
+                            android:textColor="#E0E7FF"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="📖"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/quoteText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="A book is a dream that you hold in your hand."
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        android:lineSpacingExtra="4dp"
+                        android:fontFamily="serif" />
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#80FFFFFF" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Stats Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primary"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/totalBooksLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Books"
+                        android:textColor="#E0E0E0"
+                        android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/totalBooks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#FFF"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/issuedBooksCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/accent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/issuedBooksLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Issued"
+                            android:textColor="#E0E0E0"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/issuedBooks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#FFF"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Featured Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover Books ✨"
+                android:textColor="@color/text_main"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/featuredRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clipToPadding="false"
+                android:layout_marginBottom="25dp"/>
+
+            <!-- Real Database Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recently Added 📚"
+                android:textColor="@color/text_main"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentBooksRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clipToPadding="false"
+                android:layout_marginBottom="30dp"/>
+
+            <!-- Credit Footer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Developed by Lakshita Rakhecha"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/card_white"
+        app:elevation="10dp"
+        app:menu="@menu/bottom_menu"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/primary"
+        app:labelVisibilityMode="labeled" />
+
+</RelativeLayout>
